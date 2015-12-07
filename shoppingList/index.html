@@ -1,0 +1,63 @@
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:900,400' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body ng-app="root" ng-controller="shoppingCtrl">
+
+	<h2 class='header'>Atico #2 needs <span class='counter'>{{ itemCount() }}</span> things in the pantry</h2>
+	<div class='content'>
+		<form ng-submit="itemAdd()">
+		    <section>
+			        <div class='forms'>
+			            <input class='type' type="text" ng-model="shopInput" size="50" placeholder="What do we need?">
+			        </div>
+			        <div class='forms'>
+			            <input class='press' type="submit" value="Add that">
+			        </div>
+			</section>
+
+		</form>
+
+		<div ng-repeat="i in shoppingList">
+		    <input type="checkbox" ng-model="i.done"> <span ng-bind="i.itemText"></span>
+		</div>
+
+		<button ng-click="itemRemove()">Remove marked stuff</button>
+		<button ng-click='clearAll()'>Away with it all</button>
+	</div>
+</body>
+
+<script src="root.js"></script>
+
+<style type="text/css">
+
+body {
+	font-family: 'Playfair Display', serif;
+	font-weight: 400;
+	background-color: #008000;
+}
+
+form  { width: 100%; display: table; padding: 1em 0 0; }
+
+.header {
+	font-family: 'Playfair Display', serif;
+	font-weight: 900;
+	text-align: center;
+}
+
+.content {
+	position: absolute;
+}
+
+.counter {
+	font-family: 'Josefin Slab', serif;
+	font-size: 200;
+	font-weight: 100;
+}
+
+section { width: 100%; display: table; padding: 1em 0 0; }
+.forms { display: table-cell; width: 100%; }
+.type { width: 100%; padding: .5em 1em; }
+.press { color: black; padding: .5em 1em; white-space: nowrap; margin: 0 0 0 1em; }
+
+</style>

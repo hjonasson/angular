@@ -1,0 +1,17 @@
+{
+  "name": "shoppingList",
+  "version": "1.0.0",
+  "description": "Shopping list app for Atico 2",
+  "main": "root.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "hjortur",
+  "license": "MIT",
+  "dependencies" : {
+    "express" : "4.13.3",
+    "mongojs" : "2.0.0",
+    "body-parser" : "1.14.1"
+  }
+}
