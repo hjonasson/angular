@@ -1,13 +1,4 @@
 <div ng-controller='2048'>
-	<div id='board' ng-repeat='i in tiles track by $index'>
-		<div class='tile'> </div>
+	<div class='tile' ng-repeat='i in tiles track by $index'>
 	</div>
 </div>
-<style type="text/css">
-.tile {
-	width: 30px;
-	height: 30px;
-	border-radius: 5px;
-	background-color: black;
-}
-</style>
