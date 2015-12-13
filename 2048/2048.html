@@ -1,4 +1,5 @@
-<div ng-controller='2048'>
+<div id='board' ng-controller='2048'>
 	<div class='tile' ng-repeat='i in tiles track by $index'>
+		<div>{{$index}}</div>
 	</div>
 </div>
